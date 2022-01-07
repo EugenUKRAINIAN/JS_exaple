@@ -1,0 +1,111 @@
+/*Изначально составляю  обнуляющих список стилей 
+с целью одинакового(равномерного) отображения страницы 
+в различных браузерах( у которых разные настройки отображения по умолчанию)
+
+ !!! важно.  если выбраны обнуляющие стили для всех элементов !!!
+ !!! ТО они влияют на отображение (задают значения свойствам элементов) !!! 
+ !!! абсолютно всех элементов, что может координально повлиять !!! 
+ !!!  на отображение их на странице !!!
+*/
+
+/*
+КОМЕНТЫ, Которыми я успешно пользуюсь для точечного "отключения" элементов кода
+*/           /**/ 
+
+*{
+padding: 0px;
+margin: 0px;
+box-sizing: border-box;
+}
+ 
+* { margin: 0px; padding: 0px; border: 0px;}
+*,*:before,*:after {
+ box-sizing: border-box;
+/*-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box; */ 
+}
+
+
+a:focus,a:active { outline: none; }
+:focus,:active { outline: none; }
+a, a:visited { text-decorarion: none }
+a:hover { text-decorarion: none }
+
+button { cursor: pointer; }
+button, input,  textarea { font-family: inherit;}
+button:: moz-focus-inner { padding: 0; border: 0;}
+button, input,  textarea { font-family: inherit;}
+
+
+nav,footer, header, aside { display: block;}
+
+html, body {
+	font-size: 100%;
+	width: 100%;
+	height: 100%;
+	line-height: 1;
+	font-size: 14px;
+	font-size-adjust: 100%;
+	/*-ms-font-size-adjust: 100%;
+	-moz-font-size-adjust: 100% */}
+
+ul li {list-style: none}
+
+img {vertical-align: top}
+
+h1,h2,h3,h4,h5,h6 {
+font-size: inherit;}
+/*-----------------------------------------*/ 
+body{
+	padding: 30px;
+	line-height: 33px;
+	margin: 0 0 30px 0;
+}
+
+.text::first-line{
+	color: gray;
+
+}
+.text::first-letter{
+	color: red;
+	font-size: 25px;
+}
+
+.text {}
+
+.list li{
+	font-size: 25px;
+	margin: 0 0 25px 0;
+}
+
+.list li::before {
+	content: " ";
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: red;
+	margin: 0px 10px 0px 0px;
+	display: inline-block;
+
+
+}
+.list li::after {
+	content: " ";
+	display: inline-block;
+	background-color: yellowgreen;
+	height: 5px;
+	width: 5px;
+	border-radius: 20%;
+	margin: 0 0 3px 3px;
+	
+}
+
+.list li:hover::before{
+	background-color: blueviolet;
+
+}
+
+.list li:hover::after {
+	background-color: black;
+}
+
